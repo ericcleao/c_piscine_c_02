@@ -1,0 +1,56 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ecerquei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/26 18:20:18 by ecerquei          #+#    #+#             */
+/*   Updated: 2019/11/26 18:20:33 by ecerquei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+int		ft_str_is_printable(char c)
+{
+	if (c < ' ' || c > '~')
+	{
+		return (0);
+	}
+	return (1);
+}
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	print_char_as_hex(char c)
+{
+	char *hex;
+
+	hex = "0123456789abcde";
+	ft_putchar('\\');
+	ft_putchar(hex[c / 16]);
+	ft_putchar(hex[c % 16]);
+}
+
+void	ft_putstr_non_printable(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (ft_str_is_printable(str[i]))
+		{
+			write(1, &str[i], 1);
+		}
+		else
+		{
+			print_char_as_hex(str[i]);
+		}
+		i++;
+	}
+}
