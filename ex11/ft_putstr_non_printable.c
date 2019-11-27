@@ -6,7 +6,7 @@
 /*   By: ecerquei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/26 18:20:18 by ecerquei          #+#    #+#             */
-/*   Updated: 2019/11/26 18:20:33 by ecerquei         ###   ########.fr       */
+/*   Updated: 2019/11/27 19:16:35 by ecerquei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,7 @@
 
 int		ft_str_is_printable(char c)
 {
-	if (c < ' ' || c > '~')
-	{
-		return (0);
-	}
-	return (1);
+	return (c >= 32 && c <= 126);
 }
 
 void	ft_putchar(char c)
@@ -26,7 +22,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	print_char_as_hex(char c)
+void	print_char_as_hex(unsigned char c)
 {
 	char *hex;
 
