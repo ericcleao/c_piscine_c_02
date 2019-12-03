@@ -6,7 +6,7 @@
 /*   By: ecerquei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 17:51:55 by ecerquei          #+#    #+#             */
-/*   Updated: 2019/12/02 12:06:01 by ecerquei         ###   ########.fr       */
+/*   Updated: 2019/12/02 14:19:41 by ecerquei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		dest[i] = src[i];
 		i++;
 	}
-	while (dest[i] != '\0')
+	while (i < n)
 	{
 		dest[i] = '\0';
 		i++;
