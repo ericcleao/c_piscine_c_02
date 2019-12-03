@@ -6,7 +6,7 @@
 /*   By: ecerquei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/26 18:20:18 by ecerquei          #+#    #+#             */
-/*   Updated: 2019/11/27 19:16:35 by ecerquei         ###   ########.fr       */
+/*   Updated: 2019/12/02 17:22:46 by ecerquei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	print_char_as_hex(unsigned char c)
 {
 	char *hex;
 
-	hex = "0123456789abcde";
+	hex = "0123456789abcdef";
 	ft_putchar('\\');
 	ft_putchar(hex[c / 16]);
 	ft_putchar(hex[c % 16]);
